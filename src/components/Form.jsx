@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Button from './Button'; // importamos el componente Button
+
 function Form({ onChange, onSubmit, data }) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,7 +34,7 @@ function Form({ onChange, onSubmit, data }) {
         />
       </div>
       <div>
-        <button type="submit">Guardar</button>
+        <Button type="submit">Guardar</Button>
       </div>
     </form>
   );

@@ -5,6 +5,7 @@ import '../../styles/Home.css';
 
 function Home() {
   const [posts, setPosts] = useState([]);
+  const randomUserId = Math.floor(Math.random() * 1000) + 1;
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -42,7 +43,7 @@ function Home() {
     <div>
       <Menu />
       <div className="container">
-        <h1>Lista de posts</h1>
+        <h1>Post List</h1>
         <ul>
           {posts.map((post) => (
             <li key={post.id}>
@@ -53,7 +54,7 @@ function Home() {
             </li>
           ))}
         </ul>
-        <Button onClick={() => createPost({ title: 'Nuevo post', body: 'Contenido del nuevo post', userId: 1 })}>Crear post</Button>
+        <Button onClick={() => createPost({ title: 'New test post', body: 'Post Content body', userId: randomUserId })}>Create post</Button>
       </div>
     </div>
   );
