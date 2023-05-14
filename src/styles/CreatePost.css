@@ -1,0 +1,19 @@
+.create-post-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  
+  .create-post-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 60%;
+  }
+  

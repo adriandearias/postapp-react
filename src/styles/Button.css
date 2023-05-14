@@ -1,0 +1,30 @@
+.bg-color {
+    background-color: #f0f0f0;
+  }
+  
+  .hover\:bg-blue-700:hover {
+    background-color: #ac35cdd5;
+  }
+  
+  .text-color {
+    color: #0e0e0e;
+  }
+  
+  .font-bold {
+    font-weight: 700;
+  }
+  
+  .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  
