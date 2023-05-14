@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Form({ onChange, onSubmit, data }) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit();
+    onSubmit(event);
   };
 
   return (

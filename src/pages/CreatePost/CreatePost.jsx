@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import Form from '../../components/Form';
 
+import '../../styles/CreatePost.css';
+import Menu from '../../components/Menu';
+
 function CreatePost({ handleAddPost }) {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ title: '', body: '' });
 
   const handleChange = (event) => {
@@ -22,14 +26,18 @@ function CreatePost({ handleAddPost }) {
       body: JSON.stringify(formData),
     });
     const data = await response.json();
+    console.log('Creando post: ', data);
     handleAddPost(data);
-    history.push('/home');
+    navigate('/home');
   };
 
   return (
-    <div>
-      <h1>Create Post</h1>
-      <Form onSubmit={handleSubmit} onChange={handleChange} data={formData} />
+    <div className="create-post-container">
+      <Menu />
+      <div className="create-post-form-container">
+        <h1>Create Post</h1>
+        <Form onSubmit={handleSubmit} onChange={handleChange} data={formData} />
+      </div>
     </div>
   );
 }
@@ -38,4 +46,4 @@ CreatePost.propTypes = {
   handleAddPost: PropTypes.func.isRequired,
 };
 
-export { CreatePost };
+export default CreatePost;
