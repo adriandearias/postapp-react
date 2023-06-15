@@ -3,16 +3,11 @@ import Button from '../../components/Button';
 import Menu from '../../components/Menu';
 import '../../styles/Home.css';
 
-function Home() {
-    const [posts, setPosts] = useState([]);
-    const randomUserId = Math.floor(Math.random() * 1000) + 1;
+function Home({posts, setPosts}) {
+    /* const [posts, setPosts] = useState([]); */
+    /* const randomUserId = Math.floor(Math.random() * 1000) + 1; */
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then((response) => response.json())
-            .then((data) => setPosts(data))
-            .catch((error) => console.error(error));
-    }, []);
+    
 
     const deletePost = (id) => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
@@ -24,7 +19,7 @@ function Home() {
             .catch((error) => console.error(error));
     };
 
-    const createPost = (post) => {
+ /*    const createPost = (post) => {
         fetch('https://jsonplaceholder.typicode.com/posts', {
             method: 'POST',
             body: JSON.stringify(post),
@@ -37,7 +32,7 @@ function Home() {
                 setPosts([...posts, data]);
             })
             .catch((error) => console.error(error));
-    };
+    }; */
 
     return (
         <div>
@@ -54,7 +49,7 @@ function Home() {
                         </li>
                     ))}
                 </ul>
-                <Button onClick={() => createPost({ title: 'New test post', body: 'Post Content body', userId: randomUserId })}>Create post</Button>
+                {/* <Button onClick={() => createPost({ title: 'New test post', body: 'Post Content body', userId: randomUserId })}>Create post</Button> */}
             </div>
         </div>
     );
